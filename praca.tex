@@ -1,0 +1,106 @@
+% !TEX encoding = UTF-8 Unicode 
+
+\documentclass[magister,druk]{dyplom}
+	\usepackage[cp1250]{inputenc}
+%utf8
+\usepackage{hyperref}
+\usepackage{amssymb}
+%%
+\usepackage[toc]{appendix}
+\renewcommand{\appendixtocname}{Dodatki}
+\renewcommand{\appendixpagename}{Dodatki}
+
+% Głębokość numerowania sekcji /section /subsection /subsubsection ...
+\setcounter{secnumdepth}{4}
+
+% pakiet do składu listingów w razie potrzeby można odblokować możliwość numerowania linii lub zmienić wielkość czcionki w listingu
+\usepackage{minted}
+\setminted{breaklines,
+frame=lines,
+framesep=5mm,
+baselinestretch=1.1,
+fontsize=\small,
+%linenos
+}
+
+% nowe otoczenie do składania listingów
+\usepackage{float}
+\newfloat{listing}{htp}{lop}
+\floatname{listing}{Listing}
+\usepackage{chngcntr}
+\counterwithin{listing}{chapter}
+
+% patch wyrównujący spis listingów do lewego marginesu 
+%https://tex.stackexchange.com/questions/58469/why-are-listof-and-listoffigures-styled-differently
+\makeatletter
+\renewcommand*{\listof}[2]{%
+  \@ifundefined{ext@#1}{\float@error{#1}}{%
+    \expandafter\let\csname l@#1\endcsname \l@figure  % <- use layout of figure
+    \float@listhead{#2}%
+    \begingroup
+      \setlength\parskip{0pt plus 1pt}%               % <- or drop this line completely
+      \@starttoc{\@nameuse{ext@#1}}%
+    \endgroup}}
+\makeatother
+
+\usepackage{url}
+\usepackage{lipsum}
+
+% Dane o pracy
+\author{Damian Serwata}
+\title{Dynamika sieci społecznej, a dynamika rozprzestrzeniania się informacji}
+\titlen{The dynamics of social network compared to the dynamics of the spread of information}
+\promotor{dr inż. Radosław Michalski}
+\wydzial{Wydział Informatyki i Zarządzania}
+\kierunek{Informatyka}
+\specjalnosc{Danologia}
+
+\krotkiestreszczenie{This work explores a network epistemology model for a temporal social network constructed using the CogsNet model.}
+\slowakluczowe{network epistemology, social networks learning, temporal networks, CogSNet}
+
+\begin{document}
+
+    \maketitle
+    
+    \tableofcontents
+    
+    \input{streszczenie}
+    
+    \input{wstep}
+    
+    \input{rozdzial1}
+    
+    \input{rozdzial2}
+    
+    \input{rozdzial3}
+    
+    \input{rozdzial4}
+    
+    \input{rozdzial5}
+    
+    \input{zakonczenie}
+    
+    % Bibliografia
+    % W spisie pojawią się tylko pozycje cytowane w tekście, np.: \cite{aizawa_groundwater_2009}.
+    \bibliography{literatura}
+    \bibliographystyle{dyplom}
+    
+    
+    % Spisy rysunków listingów i tabel 
+    % Można włączyć gdyby opiekun pracy sobie życzył :)
+    %\listoffigures
+    %\listof{listing}{Spis listingów}
+    %\listoftables
+    
+    % Dodatki - tu można umieścić duże objętościowo materiały 
+    % - Projekt interfejsu użytkownika, 
+    % - Scenariusze wszystkich przypadków użycia
+    
+    %\appendixpage
+    %\appendix
+    %\input{dodatek}
+    %\addappheadtotoc
+
+
+
+\end{document}

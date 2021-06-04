@@ -1,0 +1,92 @@
+% !TEX encoding = UTF-8 Unicode 
+% !TEX root = praca.tex
+
+\chapter{Temporal nature of social networks}
+
+\section{Introduction}
+In most of the models described in the first chapter, the time dimension is not used. These models operate on a static network structure in which neither the set of nodes nor the configuration of connections between them changes. Such networks are called static networks. Depending on the domain represented by the network model, edges actually mean some relationship between nodes, but this relationship is very rarely permanent. Networks with a dynamic structure such as the Web, transportation and traffic networks, or communication networks are very popular and surround us from all sides. In the social networks that are the focus of this work, relationships, signaled for example by the contact between individuals, can fade over time. For example, after changing jobs, a person usually does not keep in touch with all former co-workers with whom he or she used to interact on a daily basis. \par
+Networks whose topology changes over time are called temporal networks. In this chapter, the systematization of the literature on this type of networks is carried out. Special attention is given to social temporal networks. The needs, addressed by adding a temporal dimension to the models, and the selected approaches proposed to address these needs are presented. \par
+
+
+\section{Issues and Applications}
+The research on temporal networks was undertaken because of the important observation that changes in the structure of the network can influence the processes running in it in the same significant way as the shape of the structure itself. Not paying attention to this fact may cause the omission of an important factor from the analysis and prevent a better and deeper understanding of the studied processes.
+% Division
+Due to topology dynamics, two groups of networks can be distinguished:
+\begin{itemize}
+    \item Static - nodes never disappear and all edges are constantly maintained.
+    \item Dynamic - nodes can appear and disappear, and edges can be removed and recovered.
+\end{itemize} \par
+% Division
+Another criterion by which temporal networks can be divided is their durability, which defines the intensity of changes occurring in the network structure:
+\begin{itemize}
+    \item Transient - the dynamics in the topology occur only for a moment, after which the network remains static for a longer period of time.
+    \item Continuous - changes in topology occur continuously, there is no periodicity.
+\end{itemize} \par
+% History
+Until recently, the temporal dimension was neglected in most studies. Most often, changes occurring over time were aggregated to a static network, even when the available data allowed for a different approach. One reason for this is that the study of static networks is simpler and far less computationally demanding. \par
+% Domains
+The field of temporal network research is interdisciplinary. Systems fit for modeling with this approach are very common - genetic regulation, brain functioning, or social networks. The construction of temporal networks is also particularly easy and fitting for electronic communication between individuals who contact each other using, for example, a smartphone and a messaging application. \par
+% Applications
+Temporal networks are good for modeling when the system being modeled is both random to some degree and contains some patterns and regularities. Modeling using this type of networks is unnecessary when the dynamics of the modeled system is much faster than the dynamics of the contacts occurring in it. 
+These approaches move information about when things happen from the dynamical system to the network, the underlying structure on which the dynamics happen. Systems suitable to be modeled as temporal networks are everywhere. A particularly good example of communication, that fits here, is communication between people in social networks, these days often carried out using social media and messaging applications. These are extremely useful data, among other things, in the context of research on the dynamics of information diffusion. For example, messenger applications texts, or SMS messages can take the form of a list of individual interactions.
+Temporal networks have been used, among other things, for research on controlling the spread of epidemics. Using them can improve the process and effectiveness of vaccination programs. \par
+% Event Sequence
+Temporal networks can be built similarly to static networks, using mathematical models or based on real data. One possible representation of this data is an event sequence. This format represents the series of events that occurred between nodes. A single event contains the identifiers of the nodes interacting and the timestamp of the interaction. It is the most granular form of information about interactions between individuals.
+The event sequence format can be viewed as raw data, from which a network representation can then be created. \par
+
+
+\section{Models}
+To date, several network models have been proposed to generate synthetic temporal networks. Such networks can serve as references and are also helpful when empirical data are not easily available \cite{holme_saramaki_2012}. Two possible approaches to this problem are described below.
+
+\subsection{Temporal exponential random graphs}
+The class of temporal exponential random graphs (TERGMs) models is based on statistical modeling of temporal social networks. It is an extension built on top of exponential random graphs (ERGMs) \cite{kolar_2008}. This extension is achieved by adding additional parameters to the ERGMs specification, which reflect the possible ways in which previous realizations of the network determine its current characteristics. This class of models allows the generation of temporal networks with specific parameters and can account for temporal dependencies in one or more networks.
+This type of model is used as a reference model and a way to fine-tune real temporal networks.
+
+\subsection{Models of social group dynamics}
+Another group of temporal network models is models of social group dynamics. These models take into account the seriality of social interactions when forming social ties. They focus on maintaining strong connections within subgroups of a network, following the principle that the more often an individual interacts with others in such a group, the less likely he is to leave it  \cite{zhao_2011}. The method generates reliable synthetic temporal networks from real-world data, which can then be tuned as needed.
+
+
+\section{Representations}
+% Intro
+Based on models or raw data, a temporal network representation is still needed to facilitate data interpretation and processing, and analysis. There are several possible ways to perform this transformation. At one extreme is the contact sequence method \cite{holme_saramaki_2012}, which transforms an event sequence into a social network in the simplest way. On the other side, it is possible to aggregate an event sequence into a static network. Between these approaches, it is possible to create a temporal social network that consists of a sequence of static networks \cite{brodka_2011}. An example of a social temporal network can be seen in Figure~\ref{rys:tsn}.
+
+\begin{figure}
+\centering\includegraphics[width=.6\textwidth]{img/rozdzial2/social-temporal-net.png}
+\caption{An example of TSN (temporal social network) with five static networks in sequence. (Source: \cite{brodka_2012})}  \label{rys:tsn}
+\end{figure}
+
+\subsection{Interaction Sequence}
+The simplest and most granular approach is to treat the event sequence with as little interference as possible. This projection ensures equivalence between the network and the event sequence and guarantees that the order of events is preserved. With this representation, each edge in the network exists only at the given time that the interaction in the event sequence relating to it occurred. 
+
+\subsection{Static Network}
+Another extreme approach is to create a static network from an event sequence. All interactions are aggregated and the time dimension disappears. Regardless of when an interaction took place, the edge representing it will always be in the network.
+
+\subsection{Sliding Windows}
+A compromise solution between the previous two is sliding windows. This is a representation that uses the temporal social network format. It consists of a number of temporally sorted static networks. It is possible to use different approaches to create these sliding windows:
+\begin{itemize}
+    \item Non-overlapping consecutive windows - single interaction from the event sequence is located in only one window.
+    \item Partially overlapping windows - allows you to soften the decision to create a boundary between windows at a given location, but by doing so, certain interactions may be double-counted.
+    \item Non-consecutive windows - omits certain time periods from the event time, not creating a window for them, so that some of the interactions will not be taken into account.
+    \item Hybrid approaches - a mix of other approaches, there are no rules about windows length and overlapping.
+\end{itemize}
+
+\subsection{Incremental Network}
+This approach generates a static network based on all interactions that have taken place up to a certain point in time. Each subsequent static network incorporates the full information from the previous one. The network grows over time - new nodes and edges may appear, but once introduced they never disappear again.
+
+\subsection{Recent Events}
+The recent events approach creates partially overlapping networks based on time windows whose duration depends on the occurrence time of a given number of recent interactions.
+
+\subsection{CogSNet}
+% Intro
+CogSNet (cognition-driven social network model) is a novel approach to creating temporal network representations \cite{michalski_2021}. It is the most versatile approach that, given an appropriate set of input parameters, allows the creation of any of the above representations. \par
+% Cognition basics
+The idea behind this method concerns the use of a more complex algorithm for aggregating interactions between nodes than has been done so far. The scheme of human memory operation is used here. This cognitive perspective allows for better capture of human interactions.
+% Machanismfriendship
+The level of friendship between individuals is treated, as in the case of human friendship, as a value that is constantly changing over time, rather than being constant between interactions, or changing discretely. The system may work that way due to the use of a forgetting mechanism. This is a function that describes the chance of individuals to recall events. The level of friendship between individuals is determined by examining their interactions with each other. Each interaction bumps up the friendship level by a predefined value, which is one of the model parameters. On the other hand, the friendship level is decreased over time according to the forgetting function. If it is greater than a predefined threshold at any given time, the model decides that there is an active connection between these nodes.
+The conducted research confirmed that, with the selection of appropriate parameters, the temporal network created by the CogSNet approach is performing better that the other methods  \cite{michalski_2021}. \par
+
+
+\section{Summary}
+This chapter has outlined the topic of social temporal networks. Models and popular approaches to representing such networks have been presented.  \par
+Conducting research on this type of network is more difficult than with static networks. The number of available methods is also smaller. Nevertheless, the introduction of a temporal factor may be worth the effort because it has a direct impact on the dynamics of processes occurring in social networks. \par
+After analyzing the available literature, it was decided to use temporal social networks, created using the CogSNet method, in the later part of this work. The decision was based on the fact that this approach has shown very high potential and great results when tested on real social network data. \par
