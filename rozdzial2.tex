@@ -9,7 +9,7 @@ Networks whose topology changes over time are called temporal networks. In this 
 
 
 \section{Issues and Applications}
-The research on temporal networks was undertaken because of the important observation that changes in the structure of the network can influence the processes running in it in the same significant way as the shape of the structure itself. Not paying attention to this fact may cause the omission of an important factor from the analysis and prevent a better and deeper understanding of the studied processes.
+The research on temporal networks was undertaken because of the important observation that changes in the structure of the network can influence the processes running in it in the same significant way as the shape of the structure itself. Not paying attention to this fact may cause the omission of an important factor from the analysis and prevent a better and deeper understanding of the studied processes.\\
 % Division
 Due to topology dynamics, two groups of networks can be distinguished:
 \begin{itemize}
@@ -63,7 +63,8 @@ The simplest and most granular approach is to treat the event sequence with as l
 Another extreme approach is to create a static network from an event sequence. All interactions are aggregated and the time dimension disappears. Regardless of when an interaction took place, the edge representing it will always be in the network.
 
 \subsection{Sliding Windows}
-A compromise solution between the previous two is sliding windows. This is a representation that uses the temporal social network format. It consists of a number of temporally sorted static networks. It is possible to use different approaches to create these sliding windows:
+A compromise solution between the previous two is sliding windows. This is a representation that uses the temporal social network format. It consists of a number of temporally sorted static networks. \\
+It is possible to use different approaches to create these sliding windows:
 \begin{itemize}
     \item Non-overlapping consecutive windows - single interaction from the event sequence is located in only one window.
     \item Partially overlapping windows - allows you to soften the decision to create a boundary between windows at a given location, but by doing so, certain interactions may be double-counted.
@@ -87,7 +88,7 @@ The level of friendship between individuals is treated, as in the case of human 
 The conducted research confirmed that, with the selection of appropriate parameters, the temporal network created by the CogSNet approach is performing better that the other methods \cite{michalski_2021}. \par
 
 \begin{figure}
-\centering\includegraphics[width=.6\textwidth]{img/rozdzial2/representations.png}
+\centering\includegraphics[width=.9\textwidth]{img/rozdzial2/representations.png}
 \caption{Visualization of the different representation approaches for an example temporal social network with 4 nodes. (Source: \cite{michalski_2021})}  \label{rys:representations}
 \end{figure}
 

@@ -36,14 +36,14 @@ Support of social sciences by mathematical models as well as statistical and com
 % Historycznie
 The first studies of social learning were concentrated on social influence topics and explored the theory of opinion leaders. These focused on the question of which individuals tend to become opinion leaders. Subsequently, scientists have consistently developed more complex and realistic models that have made it possible to answer the wider and wider range of questions presented in the previous section. For years, attempts have been made to create models that reproduce changes in community beliefs over time. Although it has been a problem to relate many theoretical results to real data, the situation has changed in recent years thanks to data obtained from social media networks. So far, a very large number of opinion dynamics models have been developed. Among them, there are some simple fundamental models that allow us to understand the most important phenomena and capture the overall sense of the problem. \par
 % Klasyfikacja modeli
-Models can be divided into two main, fundamentally different types: macroscopic and microscopic. The first ones help to answer the questions of how? and how much? They do not represent what happens at the microscale, at the level of individual units of analysis. They model the behaviour of appropriate average values. The main disadvantage of such models is the lack of an answer to the question about the causes of occurring phenomena. Microscopic models are created in order to try to answer the question of why something happens.
+Models can be divided into two main, fundamentally different types: macroscopic and microscopic. The first ones help to answer the questions of how? and how much? They do not represent what happens at the microscale, at the level of individual units of analysis. They model the behaviour of appropriate average values. The main disadvantage of such models is the lack of an answer to the question about the causes of occurring phenomena. Microscopic models are created in order to try to answer the question of why something happens. \\
 In the case of the economic and social sciences, models of the following type are distinguished:
 \begin{itemize}
     \item Microsimulation, where changes in the states of objects are determined by certain deterministic or stochastic rules.
     \item Agent Based Models, in which the system under study is a set of agents that interact with each other according to certain model-dependent rules.
 \end{itemize} \par
 % Agent Based Modelling
-A frequently used approach is agent based modelling, in which a single agent is equivalent to a person and the whole system consists of a network of such agents. An agent, as the basic element of a system, has certain numerically described characteristics like opinion and usually interacts with other agents or external factors.  Both the characteristics of a single agent and the rules of interaction are dependent on the specific model. An opinion is a numerical representation of an agent's belief, in most cases, it can be an integer, a continuous number, or a vector. \par
+A frequently used approach is agent based modelling, in which a single agent is equivalent to a person and the whole system consists of a network of such agents. An agent, as the basic element of a system, has certain numerically described characteristics like opinion and usually interacts with other agents or external factors.  Both the characteristics of a single agent and the rules of interaction are dependent on the specific model. An opinion is a numerical representation of an agent's belief, in most cases, it can be an integer, a continuous number, or a vector. \\
 The general scheme in agent models can be presented as follows:
 \begin{enumerate}
     \item Single agents or groups of agents are arranged - the algorithm for selecting agents for meetings depends on the model.
@@ -51,7 +51,7 @@ The general scheme in agent models can be presented as follows:
     \item The procedure is repeated.
 \end{enumerate} \par
 % Bayesian or myopic
-Other criteria by which the different approaches can be divided are whether learning is Bayesian or myopic and whether individuals learn from specific signals or by observing actions taken by others. The advantage of Bayesian updating is its solid normative basis but it's often complex. The observation and updating of views in this model are done in a sophisticated way. Alternatively, simpler models may not pay attention to the actions of specific individuals, only observe their opinion and update their own by averaging.\\
+Other criteria by which the different approaches can be divided are whether learning is Bayesian or myopic and whether individuals learn from specific signals or by observing actions taken by others. The advantage of Bayesian updating is its solid normative basis but it's often complex. The observation and updating of views in this model are done in a sophisticated way. Alternatively, simpler models may not pay attention to the actions of specific individuals, only observe their opinion and update their own by averaging. \\
 The following subsections will discuss several types of different models that have so far been frequently used to study the problem of social learning.
 
 
@@ -98,7 +98,7 @@ This is because all people, both individually and in communities interact with t
 In this model, unlike simpler ones such as epidemic models, for example, beliefs do not simply transfer from one person to another. Each individual has some degree of confidence in a particular view, which leads him to collect evidence to support it. This evidence influences the subsequent verification of the views. Each agent shares the collected evidence with his neighbors, which also influences the formation of their opinions. \par
 
 \begin{figure}
-\centering\includegraphics[width=.6\textwidth]{img/rozdzial1/epinet_example.png}
+\centering\includegraphics[width=.8\textwidth]{img/rozdzial1/epinet_example.png}
 \caption{An example of an opinion spread in an epistemic network. (Source: \cite{sep-epistemology-social})}  \label{rys:network}
 \end{figure}
 
@@ -107,7 +107,7 @@ The network epistemology model was initially proposed in \cite{bala_goyal} to mo
 Using this model, it has been observed that even a community of perfectly rational people, trying to figure out the truth about the world, can come to false conclusions. This is because the actual scientific evidence obtained by interacting with the world is probabilistic. For example, not all cigarette smokers will develop lung cancer. By observing too small a control group, it may be that none of the smokers get sick. Such cases, though obviously less likely, do occur and are the genesis of studies showing no statistical relationship between smoking and cancer. Such a misleading study, if sufficiently well publicized, may be enough to mislead the entire community. \par
 
 % Zollman
-Subsequently, work on this model was undertaken by philosopher Kevin Zollman. It was he who proposed using the model to mimic the operation of scientific communities. His work shows that the model can help understand the consensus building process in such communities. At first glance, it would seem that better communication of experimental results between individuals should improve community learning. It is true that such more densely connected communities come to a consensus more quickly, but more often than not it is an incorrect consensus. The results of his simulations show that the structure of a social network has a direct impact on the likelihood of reaching a correct consensus \cite{zollman_2007}. In particular circumstances, fewer connections and thus a slower process of exchanging views may help the whole community to reach correct conclusions. In a more precise study, it was later shown that this effect only occurs if learning is difficult and agents have great difficulty distinguishing between better theory \cite{oconnor_rosenstock_2017}. \par
+Subsequently, work on this model was undertaken by philosopher Kevin Zollman. It was he who proposed using the model to mimic the operation of scientific communities. His work shows that the model can help understand the consensus building process in such communities. At first glance, it would seem that better communication of experimental results between individuals should improve community learning. It is true that such more densely connected communities come to a consensus more quickly, but more often than not it is an incorrect consensus. The results of his simulations show that the structure of a social network has a direct impact on the likelihood of reaching a correct consensus \cite{zollman_2011}. In particular circumstances, fewer connections and thus a slower process of exchanging views may help the whole community to reach correct conclusions. In a more precise study, it was later shown that this effect only occurs if learning is difficult and agents have great difficulty distinguishing between better theory \cite{oconnor_rosenstock_2017}. \\
 The difficulty of the problem in this model is based on its three parameters:
 \begin{itemize}
     \item Payoffs of the two possible actions is very similar.
@@ -127,18 +127,7 @@ Industry propagandists shape public opinion by selectively sharing only those re
 % endogenous epistemic fractionalization
 The problem of epistemic fractionalization was also studied using this model. This is the situation in which people who disagree on one issue tend to disagree on others as well. This related mistrust leads to the endogenous emergence of factions of individuals in the community with highly correlated views on a wide variety of topics. This behavior explains the actual tendency of people to accept full packages of views from the groups to which they belong \cite{oconnor_weatherall_2018_2}.
 
-% ---------------------------------------------------------
-% -----------------------------------------------------------------------
 
 \section{Summary}
 The overview of methods used to model the spread of views presented in this chapter provides an overview of the subject and an understanding of the variety of approaches and challenges faced by researchers working in this area. Different approaches presented, focusing on a macroscopic view of the problem and a microscopic focus on the individual. \par
 One of the more advanced and recently focused approaches is the network epistemology model, which covers important concepts that are missing from simpler models. The fact that it captures many social phenomena such as conformism, polarization, and the influence of propaganda allows it to be widely applied. Also, the nature of the model itself and the process of working proposed in it are extremely interesting because of its similarity to the psychological and cognitive processes used by humans on a daily basis. It is this model that the later part of the work will focus on, beginning in the third chapter.
-
-% ----------------------------------------------------------------------------------------------------------------------------------------------
-% Other:
-
-% - The DeGroot model has emerged as a credible alternative to the standard Bayesian model for studying learning on networks, offering a natural way to model naive learning in a complex setting. One unattractive aspect of this model is the assumption that the process starts with every node in the network having a signal.
-
-% - Schemat epistemologii sieciowej obejmuje istotne kwestie, których brakuje w prostszych modelach. Osobniki świadomie zbierają dane, udostępniają je, a później ponoszą konsekwencje ewentualnych błędnych wniosków.
-
-% - Agenci mogą uczyć się nie tylko na własnych doświadczeniach, ale także na doświadczeniach osób ze swojego kręgu znajomości. Społeczność w jakiej żyje dany osobnik w dużej mierze determinuje to jakie przekonania ostatecznie sobie wyrobi.
