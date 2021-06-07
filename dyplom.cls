@@ -64,7 +64,7 @@
         {6\p@\@plus2\p@}
 %%% Floaty
 %% Rysunki
-\renewcommand\figurename{Rys.}
+\renewcommand\figurename{Fig.}
 %%% Strona tytułowa
 \def\author#1{\gdef\@author{#1}}
 \def\@author{\@latex@error{No \noexpand\author given}\@ehc}

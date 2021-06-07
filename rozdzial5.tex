@@ -1,20 +1,74 @@
 \chapter{Results and Discussion}
 
 \section{Introduction}
+This chapter is devoted to the description of the research conducted and the presentation of the results. Conclusions from the results obtained in the simulations and the impact of these observations on the knowledge of social learning in networks are presented. Finally, potential directions for future work are discussed. \par
 
 
-\section{Problem difficulty for static networks}
+\section{Results}
+
+%Problem difficulty for static networks
+% Experiment description
+As the first study conducted, the effectiveness of reference static networks was compared with a temporal network in solving problems of various difficulties. The difficulty of the problem was controlled by changing the value of the Beta action payoff parameter. Other parameters of the model were kept at fixed, predefined values. Additionally, in order to better verify the effect of the dynamic structure on the temporal network performance, an alternative version of the temporal social network was prepared in which the structure was kept frozen for the last 10 time windows. That is, in the last 10 days, there were no more changes in the connections between individuals and no nodes appeared or disappeared. \par
+The Beta action payoff values in the range {0.5001, 0.50025, 0.5005, 0.501, 0.5025, 0.505, 0.51, 0.525, 0.55} were tested. The maximum number of iterations for the static topologies was set to 10,000. To ensure a similar maximum number of possible iterations between the static models and the temporal network, the number of iterations per time window for the temporal network was set to 91. This configuration resulted in the maximum number of iterations for the temporal network being set to 10,010, 10 more than for the static networks. Trials number \textit{n} was equal to 10. 1,000 simulations were run for each parameter configuration. \par
+
+\begin{figure}
+    \centering\includegraphics[width=\textwidth]{img/rozdzial5/exp1.pdf}
+    \caption{Community performance for various difficulty of the given problem.} 
+    \label{fig:exp1}
+\end{figure}
+
+\begin{figure}
+    \centering\includegraphics[width=\textwidth]{img/rozdzial5/temporal_sim.pdf}
+    \caption{Proportion of outcomes for temporal network simulations.} 
+    \label{fig:temporal_sim}
+\end{figure}
+
+% Observations
+The obtained results are shown in Figure~ref{fig:exp1}. It can be observed that all networks except Random and Small-World for Beta action payoff equal to 0.501 reached correct consensus in all simulations performed. For the two topologies mentioned above, this did not happen because some of the generated structures had smaller connected components, containing only two nodes, which may have already received a drawn credence unsupportive of Beta action or fallen into the trap of spurious data at the beginning of the simulation, and once the credence of all individuals in a connected component falls below 0.5, no one makes an attempt to experiment with Beta action and such connected component reaches incorrect consensus. Apart from the random and  Small-World graphs, for Beta action payoff values greater than 0.005, the probability of reaching correct consensus is lowest for both the entire temporal network and its largest connected component. Most significantly, however, the community in the temporal network configuration is not only able to reach consensus, although with a lower probability than in static networks, but for relatively simple problems all simulations ended up reaching the correct consensus on the action payoff. \par
+If we look at the average community credence, for simulations with beta action payoff equal to 0.505, we can see that it is comparable for all configurations. The lower likelihood of correct consensus for the temporal network may be due to the fact that certain small connected components, separated from the rest of the individuals fell into incorrect consensus, after which they had no opportunity to contact other nodes since then, and thus no opportunity to change their minds. \par
+It is also worth noting that the average time to converge to consensus, regardless of the difficulty of the problem, was always the longest for the temporal network. Only this structure needed a relatively large number of nearly 1,500 iterations to converge to consensus, even for the easiest problem, where other networks were able to handle it very quickly. \par
+The version of the temporal network with frozen time windows was tested, but omitted from the visualizations because its performance overlapped almost completely with the regular version of the temporal network. \par
+Figure~\ref{fig:temporal_sim} shows the state distribution that the temporal network had at the end of each simulation for different levels of problem difficulty. An interesting observation is that just as in the static networks, in the dynamic network, no simulation ended up converging to the incorrect consensus. \par
 
 
-\section{Learning in Temporal Networks}
+% Learning in Temporal Networks
+% Experiment description
+The research presented in the first chapter shows that network structure is an important factor in the process of opinion formation in social networks. This experiment examined how dynamic structure affects the time course characteristics of this process. Communities organized in reference network structures, and in a dynamic network were given a relatively simple problem to solve. In this case, the goal is not so much to see how successfully each community will perform, but the process itself. To ensure a fair level of conditions, all communities performed an identical number of iterations, that is, 110. In the dynamic network, one iteration was performed for one time window - it is as if individuals performed experiments and contacted each other to update their views exactly once a day for 110 days. In this study, 10,000 simulations were run for each network. Trials number \{textit{n} was equal to 10. \par
+
+\begin{figure}
+    \centering\includegraphics[width=\textwidth]{img/rozdzial5/exp2.pdf}
+    \caption{The course of community learning process.} 
+    \label{fig:exp2}
+\end{figure}
+
+% Observations
+Averaged over all simulations, the values of the average credence and the number of Beta action voters are shown in Figure~ref{fig:exp2}. A noticeable characteristic of the process flow for the temporal network and its largest connected component is their instability and fluctuating values. The average values of both measured characteristics, for the static networks, seem to be non-decreasing over time, in the case of credence converging to 1 and in the case of beta voter fraction to 100 percent. Instability apparent only in the temporal network, even despite averaging the results of a large number of simulations. This observation indicates that the dynamic structure of the network causes fluctuations in learning. These fluctuations may be a reflection of new nodes joining the network or reactivating those that fell out of the structure some time earlier and were inactive for some time. The chance that such nodes have a low level of credence and choose the Alpha action is greater than that they are followers of the Beta action, especially if they were previously elements of smaller coherent components which are easier to fall into a state of incorrect consensus. \par
+
+
+\section{Discussion}
+Several conclusions can be drawn from the conducted study. First, at least in the case of the temporal social network created on the basis of the NetSense dataset, it can be confirmed both that the community described by this structure is capable of reaching a consensus, and that the dynamic structure of the network has a noticeable influence on both the course and outcome of the learning process. \par
+Single cases of convergence to incorrect consensus occurred only in the complete network structure, which is due to the fact that in the rare case when a coincidence leads to the observation of many results discrediting a better action, their large propagation in such a densely connected network has a negative effect on learning, confirming the Zollman effect \cite{zollman_2007}. In other types of static structures and in a dynamic network, no cases of convergence to incorrect consensus were observed, which is probably most influenced by the size of the network. \par
+The experiments confirm that the network epistemology model is sensitive to the choice of parameters. A small difference in Beta action payoff can determine the ability of a community to collectively draw correct conclusions and come to a consensus on a topic at a given time. \par
+Among the most important observations is the fact that not only the static model structures studied so far, but also the actual social network can collectively solve the problem posed to it in a finite time. One can also observe that for more difficult problems, despite the lack of consensus, almost all or most simulations end with the temporal network prevailing to disperse a better view. For properly configured, easier problems, achieving this result is almost certain. If we look at the largest connected component in the temporal network, we can see that in some cases, even though the whole community may be struggling to solve the problem posed to them, the largest subgroup of the network reaches a correct consensus. This means that those who rejected the better action tend to be on the periphery of the community, gathered in smaller groups supporting the same, but worse, view. The same applies to the time to converge to a consensus. In the full network, it is significantly longer than for static reference networks and for the largest connected component. Convincing initially isolated individuals requires contacting them and cannot be done any other way. Isolated individuals who insist on an erroneous view may and do change their minds, but they must be given evidence to do so. \par
+The dynamic structure of the community also has a significant impact on the process of learning itself. The number of people advocating different options can change dynamically and affect the proportion of groups supporting different actions. In no other structure does the average credence or the number of people supporting a better action decrease as the learning process progresses, as it does in a dynamic network. \par
+It is important to note, however, that the study was conducted on only a fragment of one temporal network and no strong conclusions or generalizations can be drawn from it, although the results do support the predictions about the effect of dynamized structure on learning. \par
 
 
 \section{Future Work}
+The proposed temporal network epistemology model can be considered as a first step towards studying learning processes in temporal social networks. The research presented here explores only a small fraction of the possibilities for using the model to better understand how human communities collectively work to solve the problems set before them. Several of the possible future directions for this work are outlined below. \par
 
-\subsection{More data}
+\subsection{Social Phenomena}
+In this work, the proposed temporal network epistemology model is based on the basic learning model proposed in \cite{zollman_2011}. In recent years, there have been several noteworthy modifications of this model proposed in \cite{oconnor_weatherall_2018}, \cite{oconnor_weatherall_2018_2}, \cite{oconnor_weatherall_2018_3}, \cite{oconnor_weatherall_2020_2}, which are further described in the first chapter. These extensions enable to capture some social behaviors like conformity or social trust capital, resulting in social phenomena like polarization and propaganda, which are often observed in real human societies after all. Adding these extensions to the temporal network epistemology model could allow verifying the operation of such phenomena in dynamic networks. \par
 
-\subsection{Social phenomena}
+\subsection{Experimental Data Expansion}
+This study was conducted on only one temporal social network constructed from the NetSense dataset. In order to be able to draw stronger conclusions based on the results presented here, it would be necessary to repeat the experiments on a larger number of temporal networks. There are other reference empirical datasets with different characteristics that could be used for this purpose, such as \cite{chaintreau_2007}, \cite{michalski_2020_2}. Also worth considering is the use of synthetic temporal network models described in the second chapter that allow the generation of such structures. Such a study could confirm or reject the observations presented in this work and shed new light on the problem under study. \par
 
+\subsection{Temporal Structure Synchronization}
+From the perspective of temporal network structure, an important direction of development would be to verify the influence of communication and update frequency on the effectiveness and speed of the learning process. A potential experiment could be to test temporal social networks created for time windows of different resolutions. Showing how this process depends on the frequency of information exchange could help to differentiate communities that are better and which are worse prepared to cope with tasks from the category corresponding to the problem class like in the network epistemology model. \par
+
+\subsection{Belief Spread Maximalization}
+Another interesting research direction that could be worth exploring is the issue of social influence study. Similar studies have already been conducted for other models of diffusion in social networks \cite{michalski_2014}. More recent research indicates that the relevance of individuals on network spread can be effectively estimated using entropy-based measures \cite{michalski_2020}. A separate direction could also be to study the effect of initial conditions on the learning process. \par
 
 
 \section{Summary}
+This section describes the experiments conducted for different static network configurations and the temporal network for the temporal network epistemology model. The conclusions that can be drawn from these studies are then described. The most relevant observations are that temporal social networks despite their dynamic structure are able to reach a consensus on the network epistemology model and that the dynamic structure affects the learning process stability. In the end, possible directions for the development of this work were presented. \par
