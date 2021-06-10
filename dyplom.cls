@@ -673,7 +673,7 @@
 \vspace{0.15ex}
 Kierunek studiów: \@kierunek
 
-%		Specjalność: \@specjalnosc\\
+Specjalność: \@specjalnosc\\
 \text{}
 \end{flushleft}
 \begin{minipage}[t][0.46\textheight]{\textwidth}
@@ -733,7 +733,7 @@ słowa kluczowe:\\[0.8ex]
 \begin{minipage}[b][0.33\textheight]{\textwidth}
 \begin{tabular}{|P{2.35cm}|P{6cm}|C{1.15cm}|C{1.9cm}|}
 \hline
-\multirow{2}{2.35cm}[.2em]{\scriptsize Opiekun pracy dyplomowej}&\multicolumn{3}{c|}{\ }
+\multirow{2}{2.35cm}[.2em]{\scriptsize Opiekun pracy dyplomowej} & \multicolumn{3}{c|}{\footnotesize dr inż. Radosław Michalski}
 \\ \cline{2-4} 
 &\multicolumn{3}{c|}{\scriptsize Tytuł/stopień naukowy/imię i nazwisko}\\
 \hline
