@@ -1,7 +1,7 @@
 % !TEX encoding = UTF-8 Unicode 
 % !TEX root = praca.tex
 
-\chapter{Temporal nature of social networks}
+\chapter{Temporal Nature of Social Networks}
 
 \section{Introduction}
 In most of the models described in the first chapter, the time dimension is not used. These models operate on a static network structure in which neither the set of nodes nor the configuration of connections between them changes. Such networks are called static networks. Depending on the domain represented by the network model, edges actually mean some relationship between nodes, but this relationship is very rarely permanent. Networks with a dynamic structure such as the Web, transportation and traffic networks, or communication networks are very popular and surround us from all sides. In the social networks that are the focus of this work, relationships, signaled for example by the contact between individuals, can fade over time. For example, after changing jobs, a person usually does not keep in touch with all former co-workers with whom he or she used to interact on a daily basis. \par
@@ -38,11 +38,11 @@ The event sequence format can be viewed as raw data, from which a network repres
 \section{Models}
 To date, several network models have been proposed to generate synthetic temporal networks. Such networks can serve as references and are also helpful when empirical data are not easily available \cite{holme_saramaki_2012}. Two possible approaches to this problem are described below.
 
-\subsection{Temporal exponential random graphs}
+\subsection{Temporal Exponential Random Graphs}
 The class of temporal exponential random graphs (TERGMs) models is based on statistical modeling of temporal social networks. It is an extension built on top of exponential random graphs (ERGMs) \cite{kolar_2008}. This extension is achieved by adding additional parameters to the ERGMs specification, which reflect the possible ways in which previous realizations of the network determine its current characteristics. This class of models allows the generation of temporal networks with specific parameters and can account for temporal dependencies in one or more networks.
 This type of model is used as a reference model and a way to fine-tune real temporal networks.
 
-\subsection{Models of social group dynamics}
+\subsection{Models of Social Group Dynamics}
 Another group of temporal network models is models of social group dynamics. These models take into account the seriality of social interactions when forming social ties. They focus on maintaining strong connections within subgroups of a network, following the principle that the more often an individual interacts with others in such a group, the less likely he is to leave it  \cite{zhao_2011}. The method generates reliable synthetic temporal networks from real-world data, which can then be tuned as needed.
 
 
@@ -94,5 +94,4 @@ The conducted research confirmed that, with the selection of appropriate paramet
 
 \section{Summary}
 This chapter has outlined the topic of social temporal networks. Models and popular approaches to representing such networks have been presented.  \par
-Conducting research on this type of network is more difficult than with static networks. The number of available methods is also smaller. Nevertheless, the introduction of a temporal factor may be worth the effort because it has a direct impact on the dynamics of processes occurring in social networks. \par
-After analyzing the available literature, it was decided to use temporal social networks, created using the CogSNet method, in the later part of this work. The decision was based on the fact that this approach has shown very high potential and great results when tested on real social network data. \par
+Conducting research on this type of network is more difficult than with static networks. The number of available methods is also smaller. Nevertheless, the introduction of a temporal factor may be worth the effort because it has a direct impact on the dynamics of processes occurring in social networks. After analyzing the available literature, it was decided to use temporal social networks, created using the CogSNet method, in the later part of this work. The decision was based on the fact that this approach has shown very high potential and great results when tested on real social network data. \par

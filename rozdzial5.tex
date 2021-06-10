@@ -1,7 +1,7 @@
 \chapter{Results and Discussion}
 
 \section{Introduction}
-This chapter is devoted to the description of the research conducted and the presentation of the results. Conclusions from the results obtained in the simulations and the impact of these observations on the knowledge of social learning in networks are presented. Finally, potential directions for future work are discussed. \par
+This chapter is devoted to the description of the conducted research and the presentation of the results. Conclusions from the results obtained in the simulations and the impact of these observations on the knowledge of social learning in networks are presented. \par
 
 
 \section{Results}
@@ -9,22 +9,253 @@ This chapter is devoted to the description of the research conducted and the pre
 %Problem difficulty for static networks
 % Experiment description
 As the first study conducted, the effectiveness of reference static networks was compared with a temporal network in solving problems of various difficulties. The difficulty of the problem was controlled by changing the value of the Beta action payoff parameter. Other parameters of the model were kept at fixed, predefined values. Additionally, in order to better verify the effect of the dynamic structure on the temporal network performance, an alternative version of the temporal social network was prepared in which the structure was kept frozen for the last 10 time windows. That is, in the last 10 days, there were no more changes in the connections between individuals and no nodes appeared or disappeared. \par
-The Beta action payoff values in the range {0.5001, 0.50025, 0.5005, 0.501, 0.5025, 0.505, 0.51, 0.525, 0.55} were tested. The maximum number of iterations for the static topologies was set to 10,000. To ensure a similar maximum number of possible iterations between the static models and the temporal network, the number of iterations per time window for the temporal network was set to 91. This configuration resulted in the maximum number of iterations for the temporal network being set to 10,010, 10 more than for the static networks. Trials number \textit{n} was equal to 10. 1,000 simulations were run for each parameter configuration. \par
+The Beta action payoff values in the range {0.5001, 0.50025, 0.5005, 0.501, 0.5025, 0.505, 0.51, 0.525, 0.55} were tested. The maximum number of iterations for the static topologies was set to 10,000. To ensure a similar maximum number of possible iterations between the static models and the temporal network, the number of iterations per time window for the temporal network was set to 91. This configuration resulted in the maximum number of iterations for the temporal network being set to 10,010, 10 more than for the static networks. Trials number \textit{n} was equal to 10. 1,000 simulations were run for each parameter configuration. The tables show the simulation results for seven metrics: percentage of correct consensus in Table~\ref{tab:cc}, percentage of correct disagreement in Table~\ref{tab:cd}, percentage of incorrect disagreement in Table~\ref{tab:id}, percentage of incorrect consensus in Table~\ref{tab:ic}, average credence level in Table~\ref{tab:cred}, percentage of beta voters in Table~\ref{tab:bv}, and average time to consensus in Table~\ref{tab:time}. \par
 
 \begin{figure}
-    \centering\includegraphics[width=\textwidth]{img/rozdzial5/exp1.pdf}
-    \caption{Community performance for various difficulty of the given problem.} 
-    \label{fig:exp1}
+\centering\includegraphics[width=\textwidth]{img/rozdzial5/exp1.pdf}
+\caption{Community performance for various difficulty of the given problem.} 
+\label{fig:exp1}
 \end{figure}
 
 \begin{figure}
-    \centering\includegraphics[width=\textwidth]{img/rozdzial5/temporal_sim.pdf}
-    \caption{Proportion of outcomes for temporal network simulations.} 
-    \label{fig:temporal_sim}
+\centering\includegraphics[width=\textwidth]{img/rozdzial5/temporal_sim.pdf}
+\caption{Proportion of outcomes for temporal network simulations.} 
+\label{fig:temporal_sim}
 \end{figure}
+
+% Corr Cons
+\begin{table}
+\caption{Correct Consensus percentage calculated for different networks from 1000 runs.} 
+\label{tab:cc}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50025} & 17.90 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50050} & 88.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50100} & 98.10 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50250} & 100.00 &   0.00 &    0.00 &        1.90 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &  41.70 \\
+\cline{2-12}
+ & \textbf{0.50500} & 100.00 &  80.90 &   21.10 &      100.00 &        53.50 &             11.30 &                        27.80 &                    13.70 &                               27.60 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.51000} & 100.00 & 100.00 &   29.00 &      100.00 &        96.30 &             99.80 &                       99.90 &                   99.80 &                              100.00 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.52500} & 100.00 & 100.00 &   26.10 &      100.00 &        97.10 &            100.00 &                       100.00 &                   100.00 &                              100.00 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.55000} & 100.00 & 100.00 &   32.50 &      100.00 &        97.80 &            100.00 &                       100.00 &                   100.00 &                              100.00 & 100.00 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Corr Dis
+\begin{table}
+\caption{Correct Disagreement percentage calculated for different networks from 1000 runs.} 
+\label{tab:cd}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & 65.40 &  39.80 &   37.40 &       42.40 &        35.60 &             36.90 &                        38.70 &                    40.10 &                               36.10 &  46.80 \\
+\cline{2-12}
+ & \textbf{0.50025} & 66.30 &  31.50 &   39.10 &       54.90 &        29.90 &             36.10 &                        37.70 &                    37.60 &                               37.40 &  49.40 \\
+\cline{2-12}
+ & \textbf{0.50050} & 1.70 &  44.50 &   50.20 &       78.10 &        44.80 &             50.40 &                        53.10 &                    50.60 &                               52.70 &  66.00 \\
+\cline{2-12}
+ & \textbf{0.50100} & 0.70 &  82.30 &   91.00 &       99.30 &        84.40 &             90.30 &                        91.60 &                    90.20 &                               89.80 &  83.30 \\
+\cline{2-12}
+ & \textbf{0.50250} & 0.00 & 100.00 &  100.00 &       98.10 &       100.00 &            100.00 &                       100.00 &                   100.00 &                              100.00 &  58.30 \\
+\cline{2-12}
+ & \textbf{0.50500} & 0.00 &  19.10 &   78.90 &        0.00 &        46.50 &             88.70 &                        72.20 &                    86.30 &                               72.40 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.51000} & 0.00 &   0.00 &   71.00 &        0.00 &         3.70 &              0.20 &                         0.10 &                     0.20 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.52500} & 0.00 &   0.00 &   73.90 &        0.00 &         2.90 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.55000} & 0.00 &   0.00 &   67.50 &        0.00 &         2.20 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Incorr Dis
+\begin{table}
+\caption{Incorrect Disagreement percentage calculated for different networks from 1000 runs.} 
+\label{tab:id}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & 31.70 &  60.20 &   62.60 &       57.60 &        64.40 &             63.10 &                        61.30 &                    59.00 &                               63.90 &  53.20 \\
+\cline{2-12}
+ & \textbf{0.50025} & 13.90 &  68.50 &   60.90 &       45.10 &        70.10 &             63.90 &                        62.30 &                    62.40 &                               62.60 &  50.60 \\
+\cline{2-12}
+ & \textbf{0.50050} & 8.60 &  55.50 &   49.80 &       21.90 &        55.20 &             49.60 &                        46.90 &                    49.40 &                               47.30 &  34.00 \\
+\cline{2-12}
+ & \textbf{0.50100} & 1.00 &  17.70 &    9.00 &        0.70 &        15.60 &              9.70 &                         8.40 &                     9.80 &                               10.20 &  16.70 \\
+\cline{2-12}
+ & \textbf{0.50250} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50500} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.51000} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.52500} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.55000} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Incorr Cons
+\begin{table}
+\caption{Incorrect Consensus percentage calculated for different networks from 1000 runs.} 
+\label{tab:ic}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & 2.90 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50025} & 1.90 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50050} & 1.70 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50100} & 0.20 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50250} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.50500} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.51000} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.52500} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\cline{2-12}
+ & \textbf{0.55000} & 0.00 &   0.00 &    0.00 &        0.00 &         0.00 &              0.00 &                         0.00 &                     0.00 &                                0.00 &   0.00 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Credence
+\begin{table}
+\caption{Average Credence at the end of simulation for different networks, averaged over 1000 runs.} 
+\label{tab:cred}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+& \textbf{0.50010} & 0.582 &  0.502 &   0.501 &       0.504 &        0.503 &             0.501 &                        0.501 &                    0.502 &                               0.501 &  0.506 \\
+\cline{2-12}
+ & \textbf{0.50025} & 0.816 &  0.509 &   0.513 &       0.522 &        0.510 &             0.510 &                        0.511 &                    0.510 &                               0.510 &  0.518 \\
+\cline{2-12}
+ & \textbf{0.50050} & 0.910 &  0.540 &   0.539 &       0.568 &        0.540 &             0.537 &                        0.540 &                    0.536 &                               0.539 &  0.566 \\
+\cline{2-12}
+ & \textbf{0.50100} & 0.972 &  0.615 &   0.640 &       0.726 &        0.616 &             0.622 &                        0.632 &                    0.620 &                               0.626 &  0.689 \\
+\cline{2-12}
+ & \textbf{0.50250} & 1.000 &  0.870 &   0.915 &       0.982 &        0.874 &             0.881 &                        0.899 &                    0.882 &                               0.899 &  0.988 \\
+\cline{2-12}
+ & \textbf{0.50500} & 1.000 &  0.997 &   0.982 &       1.000 &        0.995 &             0.985 &                        0.993 &                    0.987 &                               0.993 &  1.000 \\
+\cline{2-12}
+ & \textbf{0.51000} & 1.000 &  1.000 &   0.984 &       1.000 &        0.999 &             1.000 &                        1.000 &                    1.000 &                               1.000 &  1.000 \\
+\cline{2-12}
+ & \textbf{0.52500} & 1.000 &  1.000 &   0.983 &       1.000 &        0.999 &             1.000 &                        1.000 &                    1.000 &                               1.000 &  1.000 \\
+\cline{2-12}
+ & \textbf{0.55000} & 1.000 &  1.000 &   0.986 &       1.000 &        0.999 &             1.000 &                        1.000 &                    1.000 &                               1.000 &  1.000 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Time to cons
+\begin{table}
+\caption{Time needed to reach consensus for different networks, averaged over 1000 runs.} 
+\label{tab:time}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & - &      - &       - &           - &            - &                 - &                            - &                        - &                                   - &      - \\
+\cline{2-12}
+ & \textbf{0.50025} & 7732 &      - &       - &           - &            - &                 - &                            - &                        - &                                   - &      - \\
+\cline{2-12}
+ & \textbf{0.50050} & 3628 &      - &       - &           - &            - &                 - &                            - &                        - &                                   - &      - \\
+\cline{2-12}
+ & \textbf{0.50100} & 1353 &      - &       - &           - &            - &                 - &                            - &                        - &                                   - &      - \\
+\cline{2-12}
+ & \textbf{0.50250} & 180 &      - &       - &        9622 &            - &                 - &                            - &                        - &                                   - &   8034 \\
+\cline{2-12}
+ & \textbf{0.50500} & 63 &   7615 &    7027 &        4320 &         8156 &              8559 &                         6429 &                     8879 &                                6279 &   2853 \\
+\cline{2-12}
+ & \textbf{0.51000} & 12 &   2214 &    1843 &        1043 &         2629 &              5239 &                         2564 &                     5300 &                                2558 &    777 \\
+\cline{2-12}
+ & \textbf{0.52500} & 3 &    342 &     352 &         171 &          418 &              1605 &                          361 &                     1657 &                                 373 &    123 \\
+\cline{2-12}
+ & \textbf{0.55000} & 1 &     83 &      77 &          45 &          100 &              1322 &                           79 &                     1257 &                                      78 &     32 \\
+\hline
+\end{tabular}}
+\end{table}
+
+% Beta Voters
+\begin{table}
+\caption{Beta Voters percentage at the end of simulation for different networks, averaged over 1000 runs.} 
+\label{tab:bv}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|r|r|r|r|r|r|r|r|r|r|} 
+\cline{3-12}
+\multicolumn{2}{l|}{\multirow{2}{*}{}} & \multicolumn{10}{c|}{\textbf{Network}} \\ 
+\cline{3-12}
+\multicolumn{2}{l|}{} & \multicolumn{1}{c|}{\textbf{Complete}} & \multicolumn{1}{c|}{\textbf{Cycle}} & \multicolumn{1}{c|}{\textbf{Random}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Scale}\\\textbf{ Free}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\\textbf{ World}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Temporal }\\\textbf{ Network }\\\textbf{ Locked }\\\textbf{ Largest CC}\end{tabular}} & \multicolumn{1}{c|}{\textbf{Wheel}} \\ 
+\hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}\textbf{Beta}\\\textbf{ Action}\\\textbf{ Payoff}\end{tabular}}
+ & \textbf{0.50010} & 60.52 &  48.85 &   48.96 &       49.59 &        49.04 &             49.07 &                        49.20 &                    49.03 &                               49.00 &  50.08 \\
+\cline{2-12}
+ & \textbf{0.50025} & 82.53 &  48.10 &   48.74 &       50.56 &        48.25 &             48.65 &                        48.88 &                    48.47 &                               48.75 &  50.51 \\
+\cline{2-12}
+ & \textbf{0.50050} & 90.53 &  49.44 &   49.73 &       55.34 &        49.64 &             50.31 &                        50.86 &                    49.92 &                               50.60 &  55.81 \\
+\cline{2-12}
+ & \textbf{0.50100} & 97.05 &  55.78 &   59.72 &       72.78 &        56.21 &             58.53 &                        60.09 &                    57.82 &                               59.03 &  68.68 \\
+\cline{2-12}
+ & \textbf{0.50250} & 100.00 &  84.65 &   90.15 &       98.33 &        85.24 &             86.74 &                        89.09 &                    86.58 &                               89.04 &  98.86 \\
+\cline{2-12}
+ & \textbf{0.50500} & 100.00 &  99.64 &   97.44 &      100.00 &        99.35 &             98.28 &                        99.24 &                    98.40 &                               99.25 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.51000} & 100.00 & 100.00 &   97.69 &      100.00 &        99.83 &            100.00 &                       100.00 &                   100.00 &                              100.00 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.52500} & 100.00 & 100.00 &   97.73 &      100.00 &        99.89 &            100.00 &                       100.00 &                   100.00 &                              100.00 & 100.00 \\
+\cline{2-12}
+ & \textbf{0.55000} & 100.00 & 100.00 &   98.12 &      100.00 &        99.91 &            100.00 &                       100.00 &                   100.00 &                              100.00 & 100.00 \\
+\hline
+\end{tabular}}
+\end{table}
 
 % Observations
-The obtained results are shown in Figure~ref{fig:exp1}. It can be observed that all networks except Random and Small-World for Beta action payoff equal to 0.501 reached correct consensus in all simulations performed. For the two topologies mentioned above, this did not happen because some of the generated structures had smaller connected components, containing only two nodes, which may have already received a drawn credence unsupportive of Beta action or fallen into the trap of spurious data at the beginning of the simulation, and once the credence of all individuals in a connected component falls below 0.5, no one makes an attempt to experiment with Beta action and such connected component reaches incorrect consensus. Apart from the random and  Small-World graphs, for Beta action payoff values greater than 0.005, the probability of reaching correct consensus is lowest for both the entire temporal network and its largest connected component. Most significantly, however, the community in the temporal network configuration is not only able to reach consensus, although with a lower probability than in static networks, but for relatively simple problems all simulations ended up reaching the correct consensus on the action payoff. \par
+The obtained results are shown in Figure~\ref{fig:exp1}. It can be observed that all networks except Random and Small-World for Beta action payoff equal to 0.501 reached correct consensus in all simulations performed. For the two topologies mentioned above, this did not happen because some of the generated structures had smaller connected components, containing only two nodes, which may have already received a drawn credence unsupportive of Beta action or fallen into the trap of spurious data at the beginning of the simulation, and once the credence of all individuals in a connected component falls below 0.5, no one makes an attempt to experiment with Beta action and such connected component reaches incorrect consensus. Apart from the random and  Small-World graphs, for Beta action payoff values greater than 0.005, the probability of reaching correct consensus is lowest for both the entire temporal network and its largest connected component. Most significantly, however, the community in the temporal network configuration is not only able to reach consensus, although with a lower probability than in static networks, but for relatively simple problems all simulations ended up reaching the correct consensus on the action payoff. \par
 If we look at the average community credence, for simulations with beta action payoff equal to 0.505, we can see that it is comparable for all configurations. The lower likelihood of correct consensus for the temporal network may be due to the fact that certain small connected components, separated from the rest of the individuals fell into incorrect consensus, after which they had no opportunity to contact other nodes since then, and thus no opportunity to change their minds. \par
 It is also worth noting that the average time to converge to consensus, regardless of the difficulty of the problem, was always the longest for the temporal network. Only this structure needed a relatively large number of nearly 1,500 iterations to converge to consensus, even for the easiest problem, where other networks were able to handle it very quickly. \par
 The version of the temporal network with frozen time windows was tested, but omitted from the visualizations because its performance overlapped almost completely with the regular version of the temporal network. \par
@@ -42,7 +273,7 @@ The research presented in the first chapter shows that network structure is an i
 \end{figure}
 
 % Observations
-Averaged over all simulations, the values of the average credence and the number of Beta action voters are shown in Figure~ref{fig:exp2}. A noticeable characteristic of the process flow for the temporal network and its largest connected component is their instability and fluctuating values. The average values of both measured characteristics, for the static networks, seem to be non-decreasing over time, in the case of credence converging to 1 and in the case of beta voter fraction to 100 percent. Instability apparent only in the temporal network, even despite averaging the results of a large number of simulations. This observation indicates that the dynamic structure of the network causes fluctuations in learning. These fluctuations may be a reflection of new nodes joining the network or reactivating those that fell out of the structure some time earlier and were inactive for some time. The chance that such nodes have a low level of credence and choose the Alpha action is greater than that they are followers of the Beta action, especially if they were previously elements of smaller coherent components which are easier to fall into a state of incorrect consensus. \par
+Averaged over all simulations, the values of the average credence and the number of Beta action voters are shown in Figure~\ref{fig:exp2}. A noticeable characteristic of the process flow for the temporal network and its largest connected component is their instability and fluctuating values. The average values of both measured characteristics, for the static networks, seem to be non-decreasing over time, in the case of credence converging to 1 and in the case of beta voter fraction to 100 percent. Instability apparent only in the temporal network, even despite averaging the results of a large number of simulations. This observation indicates that the dynamic structure of the network causes fluctuations in learning. These fluctuations may be a reflection of new nodes joining the network or reactivating those that fell out of the structure some time earlier and were inactive for some time. The chance that such nodes have a low level of credence and choose the Alpha action is greater than that they are followers of the Beta action, especially if they were previously elements of smaller coherent components which are easier to fall into a state of incorrect consensus. \par
 
 
 \section{Discussion}
@@ -54,21 +285,5 @@ The dynamic structure of the community also has a significant impact on the proc
 It is important to note, however, that the study was conducted on only a fragment of one temporal network and no strong conclusions or generalizations can be drawn from it, although the results do support the predictions about the effect of dynamized structure on learning. \par
 
 
-\section{Future Work}
-The proposed temporal network epistemology model can be considered as a first step towards studying learning processes in temporal social networks. The research presented here explores only a small fraction of the possibilities for using the model to better understand how human communities collectively work to solve the problems set before them. Several of the possible future directions for this work are outlined below. \par
-
-\subsection{Social Phenomena}
-In this work, the proposed temporal network epistemology model is based on the basic learning model proposed in \cite{zollman_2011}. In recent years, there have been several noteworthy modifications of this model proposed in \cite{oconnor_weatherall_2018}, \cite{oconnor_weatherall_2018_2}, \cite{oconnor_weatherall_2018_3}, \cite{oconnor_weatherall_2020_2}, which are further described in the first chapter. These extensions enable to capture some social behaviors like conformity or social trust capital, resulting in social phenomena like polarization and propaganda, which are often observed in real human societies after all. Adding these extensions to the temporal network epistemology model could allow verifying the operation of such phenomena in dynamic networks. \par
-
-\subsection{Experimental Data Expansion}
-This study was conducted on only one temporal social network constructed from the NetSense dataset. In order to be able to draw stronger conclusions based on the results presented here, it would be necessary to repeat the experiments on a larger number of temporal networks. There are other reference empirical datasets with different characteristics that could be used for this purpose, such as \cite{chaintreau_2007}, \cite{michalski_2020_2}. Also worth considering is the use of synthetic temporal network models described in the second chapter that allow the generation of such structures. Such a study could confirm or reject the observations presented in this work and shed new light on the problem under study. \par
-
-\subsection{Temporal Structure Synchronization}
-From the perspective of temporal network structure, an important direction of development would be to verify the influence of communication and update frequency on the effectiveness and speed of the learning process. A potential experiment could be to test temporal social networks created for time windows of different resolutions. Showing how this process depends on the frequency of information exchange could help to differentiate communities that are better and which are worse prepared to cope with tasks from the category corresponding to the problem class like in the network epistemology model. \par
-
-\subsection{Belief Spread Maximalization}
-Another interesting research direction that could be worth exploring is the issue of social influence study. Similar studies have already been conducted for other models of diffusion in social networks \cite{michalski_2014}. More recent research indicates that the relevance of individuals on network spread can be effectively estimated using entropy-based measures \cite{michalski_2020}. A separate direction could also be to study the effect of initial conditions on the learning process. \par
-
-
 \section{Summary}
-This section describes the experiments conducted for different static network configurations and the temporal network for the temporal network epistemology model. The conclusions that can be drawn from these studies are then described. The most relevant observations are that temporal social networks despite their dynamic structure are able to reach a consensus on the network epistemology model and that the dynamic structure affects the learning process stability. In the end, possible directions for the development of this work were presented. \par
+This section described the experiments conducted for different static network configurations and the temporal network for the temporal network epistemology model. The conclusions that can be drawn from these studies are then discussed. The most relevant observations are that temporal social networks despite their dynamic structure are able to reach a consensus on the network epistemology model and that the dynamic structure affects the learning process stability. \par
