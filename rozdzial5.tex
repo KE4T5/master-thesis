@@ -17,12 +17,6 @@ The Beta action payoff values in the range {0.5001, 0.50025, 0.5005, 0.501, 0.50
 \label{fig:exp1}
 \end{figure}
 
-\begin{figure}
-\centering\includegraphics[width=\textwidth]{img/rozdzial5/temporal_sim.pdf}
-\caption{Proportion of outcomes for temporal network simulations.} 
-\label{fig:temporal_sim}
-\end{figure}
-
 % Corr Cons
 \begin{table}
 \caption{Correct Consensus percentage calculated for different networks from 1000 runs.} 
@@ -260,6 +254,13 @@ If we look at the average community credence, for simulations with beta action p
 It is also worth noting that the average time to converge to consensus, regardless of the difficulty of the problem, was always the longest for the temporal network. Only this structure needed a relatively large number of nearly 1,500 iterations to converge to consensus, even for the easiest problem, where other networks were able to handle it very quickly. \par
 The version of the temporal network with frozen time windows was tested, but omitted from the visualizations because its performance overlapped almost completely with the regular version of the temporal network. \par
 Figure~\ref{fig:temporal_sim} shows the state distribution that the temporal network had at the end of each simulation for different levels of problem difficulty. An interesting observation is that just as in the static networks, in the dynamic network, no simulation ended up converging to the incorrect consensus. \par
+
+
+\begin{figure}
+\centering\includegraphics[width=\textwidth]{img/rozdzial5/temporal_sim.pdf}
+\caption{Proportion of outcomes for temporal network simulations.} 
+\label{fig:temporal_sim}
+\end{figure}
 
 
 % Learning in Temporal Networks
